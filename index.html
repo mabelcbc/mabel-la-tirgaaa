@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eduquest · Laboratorio Matemático Inmersivo</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<section id="login"><form class="card" id="lf"><h1>Eduquest</h1><p>Laboratorio matemático inmersivo · Derivadas de funciones · Grado décimo</p>
+<label>Tu nombre<br><input id="name" maxlength="40" autocomplete="off" placeholder="Ej: Mabel"></label><p id="err" class="warn"></p><button>Entrar al laboratorio</button></form></section>
+<div id="app" class="hidden">
+<header style="grid-column:1/-1"><b>Eduquest · <span id="who"></span></b><span><span id="prog">Progreso: 0/5 módulos</span> <button id="out">Cerrar sesión</button></span></header>
+<aside class="panel"><h3>Experiencias</h3><div id="cat"></div><div id="bar"><i></i></div></aside>
+<main class="panel" id="lab"><video id="cam" playsinline muted></video>
+<div class="tools"><button data-v="2d" class="on">Plano 2D</button><button data-v="3d">Vista 3D</button><button id="camBtn">Cámara + gestos</button><button id="help">Guía de gestos</button></div>
+<div id="graph"></div><div id="three" class="hidden"></div>
+<div class="tools"><label><input type="checkbox" id="sF" checked> f(x)</label><label><input type="checkbox" id="sD" checked> f'(x)</label><label><input type="checkbox" id="sT" checked> Tangente</label>
+<button id="play">▶ Animar</button><button id="pause">⏸ Pausar</button><button id="rst">↺ Reiniciar</button><button id="zi">＋</button><button id="zo">－</button></div>
+<div class="tools"><label>x₀ <input id="x0" type="range" min="-8" max="8" step="0.1" value="1"> <output id="x0o">1</output></label><span id="params"></span></div>
+<p id="gmsg" class="note">Cámara apagada. Usa el mouse (arrastrar, rueda), las flechas ← → para mover x₀ o los controles. MediaPipe solo reconoce las manos; los cálculos y gráficas los hace esta aplicación con JavaScript. El modo cámara es visualización aumentada educativa, sin anclaje espacial.</p></main>
+<aside class="panel"><div id="ficha"></div><hr><div id="quiz"></div></aside></div>
+<div id="cur"></div>
+<div id="chat" class="hidden"><div id="chatbox" class="hidden panel"><div id="msgs"></div><form id="cf"><input id="ci" placeholder="Pregunta sobre derivadas"><button>Enviar</button></form></div><button id="chatbtn">💬 Tutor</button></div>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.2/lib/browser/math.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<script src="js/derivatives.js"></script><script src="js/graph.js"></script><script src="js/three-scene.js"></script><script src="js/hand-tracking.js"></script><script src="js/exercises.js"></script><script src="js/chatbot.js"></script><script src="js/app.js"></script></body></html>
